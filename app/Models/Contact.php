@@ -19,4 +19,9 @@ class Contact extends Model
     {
         return $this->hasMany(ContactPhone::class, 'contact_id', 'id');
     }
+
+    public function addresses()
+    {
+        return $this->hasMany(ContactAddress::class, 'contact_id', 'id');
+    }
 }
