@@ -16,8 +16,15 @@ class ContactAddressFactory extends Factory
      */
     public function definition()
     {
+        $contactIDs = \App\Models\Contact::pluck('id');
         return [
-            //
+            'contact_id' => $contactIDs->random(),
+            'state' => 'SP',
+            'city' => 'São Paulo',
+            'neighborhood' => 'Bela Vista',
+            'address' => 'Avenida Paulista',
+            'number' => '1000',
+            'zip_code' => '01310-200',
         ];
     }
 }

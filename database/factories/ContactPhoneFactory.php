@@ -16,8 +16,10 @@ class ContactPhoneFactory extends Factory
      */
     public function definition()
     {
+        $contactIDs = \App\Models\Contact::pluck('id');
         return [
-            //
+            'contact_id' => $contactIDs->random(),
+            'phone' => $this->faker->phoneNumber(),
         ];
     }
 }

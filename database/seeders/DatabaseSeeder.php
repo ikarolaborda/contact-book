@@ -14,6 +14,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+        $this->call(ContactSeeder::class);
+        $this->call(ContactPhoneSeeder::class);
+        $this->call(ContactAddressSeeder::class);
     }
 }
