@@ -18,4 +18,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/contacts', [App\Http\Controllers\Api\ContactController::class, 'index']);
+Route::apiResource('/contacts', App\Http\Controllers\Api\ContactController::class);

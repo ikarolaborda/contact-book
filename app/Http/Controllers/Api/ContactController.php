@@ -14,4 +14,9 @@ class ContactController extends Controller
         $contacts = Contact::with('phones', 'addresses')->get();
         return ContactResource::collection($contacts);
     }
+
+    public function show(Contact $contact)
+    {
+        return new ContactResource($contact);
+    }
 }
